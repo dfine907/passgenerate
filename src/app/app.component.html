@@ -6,18 +6,18 @@
 </div>
 
 <div>
-    <input type="checkbox" />
     <label> Use Letters</label>
+    <input (change)="onChangeLetters()" type="checkbox" />
 </div>
 
 <div>
-    <input type="checkbox" />
     <label> Use Numbers</label>
+    <input (change)="onChangeNumbers()" type="checkbox" />
 </div>
 
 <div>
-    <input type="checkbox" />
     <label> Use Symbols </label>
+    <input (change)="onChangeSymbols()" type="checkbox" />
 </div>
 
 <div>
@@ -28,3 +28,7 @@
     <label> Your new password</label>
     <input [value]="password">
 </div>
+
+{{ password }}
+
+<!-- interpolation {{ getName() }} -->
