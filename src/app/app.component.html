@@ -1,8 +1,8 @@
 <h1> Password Generator</h1>
 
 <div>
-    <label> Enter desired length </label>
-    <input type="text">
+    <label> Enter length </label>
+    <input (input)="onChangeLength($event.target!)" [value]="passwordLength">
 </div>
 
 <div>
@@ -29,6 +29,6 @@
     <input [value]="password">
 </div>
 
-{{ password }}
+{{ passwordLength }}
 
 <!-- interpolation {{ getName() }} -->

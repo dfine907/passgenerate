@@ -9,10 +9,16 @@ import { RouterOutlet } from '@angular/router';
   styleUrl: './app.component.css',
 })
 export class AppComponent {
-  password = '';
+  passwordLength = 0;
   includeLetters = false;
   includeNumbers = false;
   includeSymbols = false;
+  password = '';
+
+  onButtonClick() {
+    this.password = 'my password';
+    console.log(this.includeSymbols);
+  }
 
   onChangeLetters() {
     this.includeLetters = !this.includeLetters;
@@ -25,10 +31,11 @@ export class AppComponent {
   onChangeSymbols() {
     this.includeSymbols = !this.includeSymbols;
   }
-  onButtonClick() {
-    this.password = 'my password';
-    console.log(this.includeSymbols);
+  onChangeLength(eventTarget: EventTarget): void {
+    const value: string = (eventTarget as HTMLInputElement).value;
+    const length = Number(value);
+    if (Number.isInteger(length)) {
+      this.passwordLength = length;
+    }
   }
-
-  
 }
