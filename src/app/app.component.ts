@@ -16,8 +16,28 @@ export class AppComponent {
   password = '';
 
   onButtonClick() {
-    this.password = 'my password';
-    console.log(this.includeSymbols);
+    const letters = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    const numbers = '023456789';
+    const symbols = '!@#$%^&*()?/';
+
+    let validCharacters = '';
+
+    if (this.includeLetters) {
+      validCharacters += letters;
+    }
+    if (this.includeNumbers) {
+      validCharacters += numbers;
+    }
+    if (this.includeSymbols) {
+      validCharacters += symbols;
+    }
+
+    let generatedPassword = ''
+    for(let i = 0; i < this.passwordLength; i +=1){
+      const index = Math.floor(Math.random() * validCharacters.length)
+      generatedPassword += validCharacters[index];
+    }
+    this.password = generatedPassword
   }
 
   onChangeLetters() {
