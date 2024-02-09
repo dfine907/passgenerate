@@ -32,12 +32,12 @@ export class AppComponent {
       validCharacters += symbols;
     }
 
-    let generatedPassword = ''
-    for(let i = 0; i < this.passwordLength; i +=1){
-      const index = Math.floor(Math.random() * validCharacters.length)
+    let generatedPassword = '';
+    for (let i = 0; i < this.passwordLength; i += 1) {
+      const index = Math.floor(Math.random() * validCharacters.length);
       generatedPassword += validCharacters[index];
     }
-    this.password = generatedPassword
+    this.password = generatedPassword;
   }
 
   onChangeLetters() {
