@@ -1,32 +1,52 @@
-<h1> Password Generator</h1>
+<div class="container">
+    <div class="columns is-centered">
+        <div class="box column is-one-third">
 
-<div>
-    <label> Enter length </label>
-    <input (input)="onChangeLength($event.target!)" [value]="passwordLength">
-</div>
+            <h1 class="title has-text-centered">Password Generator</h1>
 
-<div>
-    <label> Use Letters</label>
-    <input (change)="onChangeLetters()" type="checkbox" />
-</div>
 
-<div>
-    <label> Use Numbers</label>
-    <input (change)="onChangeNumbers()" type="checkbox" />
-</div>
+            <div>
+                <label> Enter length </label>
+                <input class="input" (input)="onChangeLength($event.target!)" [value]="passwordLength">
+            </div>
 
-<div>
-    <label> Use Symbols </label>
-    <input (change)="onChangeSymbols()" type="checkbox" />
-</div>
+            <div class="field">
+                <div class="control">
+                    <label class="checkbox">
+                        <input (change)="onChangeLetters()" type="checkbox" />
+                        Use Letters
+                    </label>
+                </div>
+            </div>
 
-<div>
-    <button [disabled]="!(passwordLength && this.includeLetters || this.includeNumbers || this.includeSymbols)"
-        (click)="onButtonClick()">Generate!</button>
-</div>
+            <div class="field">
+                <div class="control">
+                    <label class="checkbox">
+                        <input (change)="onChangeNumbers()" type="checkbox" />
+                        Use Numbers
+                    </label>
+                </div>
+            </div>
 
-<!-- property binding -->
-<div>
-    <label> Your new password</label>
-    <input [value]="password">
+            <div class="field">
+                <div class="control">
+                    <label class="checkbox">
+                        <input (change)="onChangeSymbols()" type="checkbox" />
+                        Use Symbols
+                    </label>
+                </div>
+            </div>
+
+
+            <button [disabled]="!(passwordLength && this.includeLetters || this.includeNumbers || this.includeSymbols)"
+                (click)="onButtonClick()" class="button is-link is-light">Generate!</button>
+
+            <!-- property binding -->
+            <div class="box">
+                <label>Your Password</label>
+                <input class="input" [value]="password" />
+            </div>
+
+        </div>
+    </div>
 </div>

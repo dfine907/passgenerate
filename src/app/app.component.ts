@@ -8,6 +8,7 @@ import { RouterOutlet } from '@angular/router';
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
 })
+
 export class AppComponent {
   passwordLength = 0;
   includeLetters = false;
@@ -17,7 +18,7 @@ export class AppComponent {
 
   onButtonClick() {
     const letters = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
-    const numbers = '023456789';
+    const numbers = '0123456789';
     const symbols = '!@#$%^&*()?/';
 
     let validCharacters = '';
