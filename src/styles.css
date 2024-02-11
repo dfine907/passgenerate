@@ -1,5 +1,7 @@
-@import 'bulma/css/bulma.css';
+@import "bulma/css/bulma.css";
 
 body {
-  margin-top: 50px;
+  background-color: rgb(170, 135, 222);
+  min-height: 100vh;
 }
+
